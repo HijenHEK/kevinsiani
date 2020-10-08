@@ -9,26 +9,17 @@ $(document).ready(() => {
         $(this).addClass('active');
 
     });
-    // $(document).on('mouseenter', '.card:nth-child(4n)', function (event) {
-    //     event.preventDefault();
-        
+    
+    $(document).on('click', '#humburger', function (event) {
+        event.preventDefault();
 
-    //     if($('#workout').scrollLeft() <= $('#workout').scrollLeft($('#workout').width())) {
-    //         setTimeout(
-    //             ()=>{
-    //                 $('#workout').scrollLeft(-$('#workout').width()) 
-    //             },
-    //             800
-    //         )
-    //     }else{
-    //     setTimeout(
-    //         ()=>{
-    //             $('#workout').scrollLeft($('#workout').width()) 
-    //         },
-    //         800
-    //     )
-    //     }
+        $('.nav-bar .nav').toggleClass('absolute');
 
-    // });
-
+    });
 });
+
+
+var targetWorkout = () => {
+    $('nav nav-item:nth-child(2)').siblings().removeClass('active');
+    $('nav nav-item:nth-child(2)').addClass('active');
+}

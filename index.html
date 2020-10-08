@@ -13,11 +13,14 @@
 
     <div class="nav-bar">
         <img src="./assets/kslogo.png" alt="" class="brand">
+        <div class="humburger" id="humburger">
+            <i class="fa fa-bars fa-lg"></i>
+        </div>
         <div class="nav">
             <a href="#intro" class="nav-item active">Home</a>
             <a href="#workout" class="nav-item">Workout</a>
             <a href="#intro" class="nav-item">Blog</a>
-            <a href="#intro" class="nav-item">Contact</a>
+            <a href="#contact" class="nav-item">Contact</a>
         </div>
     </div>
     <div class="section intro " id="intro">
@@ -33,13 +36,13 @@
                 Work harder wake prouder live better 
             </div>
             <div class="btn action-btn">
-                <a href="#workout">
+                <a href="#workout" @click="targetWorkout">
                     Workout Now
                 </a>
             </div>
         </div>
     </div>
-    <div class="section workout" id="workout">
+    <div class="workout" id="workout">
         <div class="card">
             <video loop autoplay muted>
                 <source src="./assets/v1.mp4" type="video/mp4">
@@ -151,6 +154,40 @@
             <div class="btn action-btn">
                 Start now
             </div>
+        </div>
+    </div>
+    <div class="section contact" id="contact">
+        <div class="left">
+            <img src="./assets/ks1.png" alt="Kevin Siani sec photo">
+
+        </div>
+        <div class="right">
+            
+            <form class="form" action="#" method="post" class="form">
+                <h1>Get in Touch :</h1>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="name">Full name</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" name="subject" id="subject">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" rows="8" cols="30" >
+    
+                    </textarea>
+                </div>
+    
+                <div class="form-group">
+                    <div class="btn action-btn" type="submit">Send !</div>
+                </div>
+            </form>
         </div>
     </div>
     <script

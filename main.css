@@ -10,7 +10,7 @@
 }
 a {
     text-decoration: none;
-    color: black;
+    color: white;
 
 }
 a:hover {
@@ -23,12 +23,10 @@ body {
     position: relative;
     font-family: 'Ubuntu', sans-serif;
     font-size: 2rem;
-    background: rgb(255,255,255);
-background: linear-gradient(31deg, rgba(255,255,255,0.60) 0%, rgba(113,133,93,0.10) 35%, rgba(0,0,0,0.40) 100%);
-    overflow-x: hidden;
+    overflow: hidden;
     scroll-behavior: auto;
-    height: 100%;
-
+    height: 100vh;
+    
 }
 body::-webkit-scrollbar {
     display : none ;
@@ -52,6 +50,17 @@ body::-webkit-scrollbar {
     height: 100%;
     justify-content: space-between;
     align-items: center;
+    letter-spacing: 0.3rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    position: relative;
+
+}
+.nav-bar i {
+    font-size: 4rem;
+    opacity: 0.7;
+    cursor: pointer;
+    display: none;
 }
 .nav-bar .brand {
     height: 7rem;
@@ -59,7 +68,6 @@ body::-webkit-scrollbar {
 }
 .nav .active {
     color : rgb(57, 192, 45) ;
-    font-weight: 700;
     transform: scale(1.2);
 }
 
@@ -67,6 +75,8 @@ body::-webkit-scrollbar {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    background: rgb(255,255,255);
+    background: linear-gradient(31deg, rgba(255,255,255,0.60) 0%, rgba(113,133,93,0.20) 35%, rgba(0,0,0,0.55) 80%);
 }
 
 
@@ -147,35 +157,44 @@ body::-webkit-scrollbar {
 
 /* workout */
 
-.workout {
-    display: flex;
-    align-items: center;
-    padding:10rem 4rem;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-    max-height: 100%;
 
 
-}
-/* width */
 .workout::-webkit-scrollbar {
     height: 1.5rem;
+    width: 1.5rem;
   }
   
-  /* Track */
+  
   .workout ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey;
     border-radius: 10px;
   }
   
-  /* Handle */
+  
   .workout::-webkit-scrollbar-thumb {
     background:  rgb(57, 192, 45);
     border-radius: 5px;
   }
+.workout {
+    display: flex;
+    align-items: flex-end;
+    padding:10rem 4rem;
+    flex-wrap: wrap;
+    background: rgb(255,255,255);
+    background: linear-gradient(31deg, rgba(255,255,255,0.60) 0%, rgba(113,133,93,0.20) 35%, rgba(0,0,0,0.55) 80%);    background-blend-mode: overlay;
+    overflow-y: scroll !important;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        height: 100%;
+    
+    
+}
 .card {
-    min-width: 250px;
-    height: 400px;
+    flex: 20%;
+    height: 100%;
+    min-width: 22rem;
+    min-height: 30rem;
+    max-width: 28rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -185,16 +204,15 @@ body::-webkit-scrollbar {
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
     padding: 2rem;
+    margin: 2rem ;
 }
-.card:not(:last-child) {
-    margin-right: 3rem;
-}
- .card video {
+
+.card video {
     position: absolute;
     top: 0;
-    left: 0;
     z-index: -1;
-    height: 100%;
+    height:  100%;
+    align-self: center;
     mix-blend-mode: overlay;
     opacity: 1;
     
@@ -230,6 +248,253 @@ body::-webkit-scrollbar {
     padding: 1rem 2rem;
     background-color: rgb(57, 192, 45);
     color: white;
+}
+
+
+.contact {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding-top: 8rem;
+    overflow: hidden;
+
+}
+.contact .left {
+    flex: 0.5;
+    display: flex;
+    justify-content: center;
+    height: 130%;
+}
+.contact .left img {
+    height: 100%;
+    opacity: 0.9;
+    mix-blend-mode: multiply;
+}
+
+.contact .right {
+    flex: 0.5;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+}
+
+
+.form .form-group {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.form .form-group > *:first-child{
+    margin-right: 2rem ;
+}
+.form .form-group:last-child > div{
+    margin-left: auto;
+}
+.form .form-group > *{
+    margin: 0.5rem 0;
+    padding: 1.2rem;
+}
+
+.form .form-group input  ,.form .form-group textarea   {
+    width: 40rem;
+    border-radius: 5px;
+    border: none;
+    outline-style: none;
+    background-color: rgba(255, 255, 255, 0.671);
+    font-size: 2.5rem;
+    
+}
+.form h1 {
+    font-weight: 500;
+    letter-spacing: 0.5rem;
+    margin: 1rem;
+
+}
+.action-btn {
+    font-size: 2rem;
+    background-color: rgb(57, 192, 45);
+    color: white;
+}
+
+
+
+
+
+@media(max-width: 1170px) {
+    .workout {
+        overflow-y: hidden !important;
+    }
+      
+    .intro .left {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        z-index: -1;
+        flex-basis: unset;
+    }
+    
+    .intro .left img {
+        opacity: 0.8;
+    }
+    
+    
+    
+    .intro .right {
+        flex: 1;
+    }
+   
+    .contact .left {
+        position: absolute;
+        z-index: -1;
+        flex: unset;
+        
+        height: 110%;
+    }
+    .contact .left img {
+        opacity: 0.6;
+    }
+    
+    .contact .right {
+        flex: 1;
+    }
+    
+
+
+
+}
+
+
+
+
+@media(max-width: 980px) {
+
+
+
+    .nav-bar i {
+        font-size: 4rem;
+        opacity: 0.7;
+        cursor: pointer;
+        display: block;
+    }
+
+
+    .nav-bar .nav {
+        display: none;
+    }
+    
+    .nav-bar .absolute {
+        position: absolute;
+        min-width: unset;
+        width: unset!important;
+        height: unset!important;
+        background-color: rgba(0, 0, 0, 0.788);
+        box-shadow: 0 0 5px  rgba(0, 0, 0, 0.788);
+        right: 2rem;
+        top: 8rem;
+        display: flex;
+        flex-direction: column;
+        height: 10rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .nav-bar .absolute > * {
+        padding: 2rem;
+        width: 100%;
+    
+    }
+    .nav-bar .absolute > *:hover {
+        background-color: white;
+        color: black;
+        transition: all 0.1s ease-in;
+    
+    }
+    .absolute .active {
+        background-color: white;
+        color: black;
+        transform: unset;
+    
+    }
+    .workout {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding:10rem 4rem;
+        
+        overflow-x: scroll;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        height: 100%;
+        flex-wrap: nowrap;
+    }
+    .card {
+        width: 25rem;
+
+        max-height: 60rem;
+        max-width: 30rem;
+        min-width: 25rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 2rem;
+    }
+    
+}
+
+
+
+
+@media(max-width: 600px) {
+
+    .intro img , .contact img {
+        width: 100% !important;
+    }
+
+    .form .form-group {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .form .form-group > *{
+        margin: 0.2rem 0;
+        padding: 1rem;
+    }
+    
+    .form .form-group input  ,.form .form-group textarea   {
+        width: 70%;
+        border-radius: 5px;
+        border: none;
+        outline-style: none;
+        background-color: rgba(255, 255, 255, 0.671);
+        font-size: 2.5rem;
+        
+    }
+    .form h1 {
+        font-weight: 500;
+        letter-spacing: 0.5rem;
+        margin: 1rem;
+    
+    }
+    .action-btn {
+        font-size: 2rem;
+        background-color: rgb(57, 192, 45);
+        color: white;
+    }
+    
+
+    
 }
 
 
