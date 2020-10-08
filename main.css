@@ -457,7 +457,10 @@ body::-webkit-scrollbar {
 @media(max-width: 600px) {
 
     .intro img , .contact img {
-        width: 100% !important;
+        width: unset !important;
+        min-width: unset !important;
+        max-width: unset !important;
+        height:  100% !important;
     }
 
     .form .form-group {
