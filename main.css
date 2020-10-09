@@ -1,6 +1,5 @@
-:root , html {
-    height: 100vh;
-    width: 100vw;
+:root {
+
     font-size: 62.5%;
 }
 * {
@@ -20,12 +19,12 @@ a:hover {
 }
 body {
     user-select: none;
-    position: relative;
     font-family: 'Ubuntu', sans-serif;
     font-size: 2rem;
-    overflow: hidden;
-    scroll-behavior: auto;
+    overflow: auto;
+    scroll-behavior: smooth;
     height: 100vh;
+    width: 100vw;
     
 }
 body::-webkit-scrollbar {
@@ -36,7 +35,8 @@ body::-webkit-scrollbar {
     z-index: 9;
     top:0 ;
     left: 0;
-    width: 100%;
+    height: 8rem;
+    width: 100vw;
     padding: 4rem;
     height: 5rem;
     display: flex;
@@ -72,26 +72,22 @@ body::-webkit-scrollbar {
 }
 
 .section {
+    background: #ada3a3;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, rgba(31, 50, 54, 0.718), rgba(189, 179, 179, 0.733));
+    background: linear-gradient(to left, rgba(31, 50, 54, 0.718), rgba(189, 179, 179, 0.733));/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: solid 0.2rem rgba(#000, .2);
+    background-size: cover;
+}
+
+.intro {
     width: 100%;
     height: 100%;
     overflow: hidden;
-/*    background: rgb(255,255,255);
-    background: linear-gradient(31deg, rgba(255,255,255,0.60) 0%, rgba(113,133,93,0.20) 35%, rgba(0,0,0,0.55) 80%);
-*/
 
-background: #ada3a3;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, rgba(31, 50, 54, 0.718), rgba(189, 179, 179, 0.733));
-background: linear-gradient(to left, rgba(31, 50, 54, 0.718), rgba(189, 179, 179, 0.733));/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-border: solid 0.2rem rgba(#000, .2);
-background-size: cover;
-box-sizing: border-box;
-
-}
-
-
-.intro {
+    
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 
@@ -336,10 +332,14 @@ box-sizing: border-box;
 
 
 @media(max-width: 1170px) {
+    
+
     .workout {
         overflow-y: hidden !important;
     }
-      
+    .section {
+        position: relative;
+    }
     .intro .left {
         height: 100%;
         display: flex;
@@ -384,8 +384,7 @@ box-sizing: border-box;
 
 @media(max-width: 980px) {
 
-
-
+    
     .nav-bar i {
         font-size: 4rem;
         opacity: 0.7;
@@ -466,7 +465,9 @@ box-sizing: border-box;
 
 
 @media(max-width: 600px) {
-    
+    :root {
+        font-size: 40%;
+    }
     .intro img , .contact img {
         height: 100% ;
         width: auto ;
